@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d1a">
+  <title>Mente Digital | Central de Comando</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #080d1a;
+      color: #f4f7ff;
+      min-height: 100vh;
+    }
+
+    .layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    aside {
+      width: 245px;
+      background: #0d1425;
+      border-right: 1px solid #202c43;
+      padding: 28px 18px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .logo span {
+      color: #398cff;
+    }
+
+    .subtitle {
+      color: #8290aa;
+      font-size: 12px;
+      margin-bottom: 35px;
+    }
+
+    .menu-title {
+      color: #71809c;
+      font-size: 11px;
+      margin: 24px 10px 12px;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      display: block;
+      padding: 12px;
+      margin-bottom: 5px;
+      border-radius: 8px;
+      color: #aab6cb;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: #172a49;
+      color: #60a5ff;
+    }
+
+    main {
+      flex: 1;
+      padding: 32px;
+      min-width: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+
+    .muted {
+      color: #8997b0;
+      font-size: 13px;
+    }
+
+    .status {
+      background: #172a24;
+      color: #63dba2;
+      border: 1px solid #28533f;
+      padding: 9px 13px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .card {
+      background: #101a2d;
+      border: 1px solid #24324a;
+      border-radius: 13px;
+      padding: 22px;
+    }
+
+    .card p {
+      color: #91a0b9;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .number {
+      font-size: 27px;
+      font-weight: bold;
+    }
+
+    .section {
+      background: #101a2d;
+      border: 1px solid #24324a;
+      border-radius: 13px;
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+
+    .section h2 {
+      font-size: 17px;
+      margin-bottom: 12px;
+    }
+
+    .agent {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px 0;
+      border-bottom: 1px solid #253149;
+      font-size: 14px;
+    }
+
+    .agent:last-child {
+      border-bottom: none;
+    }
+
+    .pending {
+      color: #e8b65d;
+      font-size: 12px;
+    }
+
+    .empty {
+      color: #8997b0;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 950px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .layout {
+        display: block;
+      }
+
+      aside {
+        width: 100%;
+        padding: 18px;
+      }
+
+      nav {
+        display: flex;
+        overflow-x: auto;
+        gap: 5px;
+      }
+
+      nav a {
+        white-space: nowrap;
+      }
+
+      .menu-title {
+        display: none;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="layout">
+
+  <aside>
+    <div class="logo">MENTE <span>DIGITAL</span></div>
+    <div class="subtitle">Inteligência que transforma.</div>
+
+    <nav>
+      <div class="menu-title">Principal</div>
+      <a href="#inicio" class="active">Visão geral</a>
+      <a href="#agentes">Agentes de IA</a>
+      <a href="#leads">Pesquisa de leads</a>
+
+      <div class="menu-title">Gestão</div>
+      <a href="#projetos">Projetos</a>
+      <a href="#clientes">Clientes</a>
+      <a href="#relatorios">Relatórios</a>
+      <a href="#configuracoes">Configurações</a>
+    </nav>
+  </aside>
+
+  <main id="inicio">
+    <header>
+      <div>
+        <h1>Central de Comando</h1>
+        <p class="muted">Painel administrativo da Mente Digital</p>
+      </div>
+      <div class="status">● Sistema em configuração</div>
+    </header>
+
+    <div class="cards">
+      <div class="card">
+        <p>Agentes conectados</p>
+        <div class="number">0</div>
+      </div>
+
+      <div class="card">
+        <p>Projetos ativos</p>
+        <div class="number">0</div>
+      </div>
+
+      <div class="card">
+        <p>Leads encontrados</p>
+        <div class="number">0</div>
+      </div>
+
+      <div class="card">
+        <p>Clientes cadastrados</p>
+        <div class="number">0</div>
+      </div>
+    </div>
+
+    <section class="section" id="agentes">
+      <h2>Equipe de inteligência artificial</h2>
+      <p class="empty">
+        Os agentes ainda não foram conectados. Esta área será utilizada
+        para acompanhar os especialistas e a IA principal.
+      </p>
+
+      <div class="agent">
+        <span>IA Diretora</span>
+        <span class="pending">Não configurada</span>
+      </div>
+
+      <div class="agent">
+        <span>Agente Comercial</span>
+        <span class="pending">Não configurado</span>
+      </div>
+
+      <div class="agent">
+        <span>Agente de Desenvolvimento</span>
+        <span class="pending">Não configurado</span>
+      </div>
+
+      <div class="agent">
+        <span>Agente de Design</span>
+        <span class="pending">Não configurado</span>
+      </div>
+
+      <div class="agent">
+        <span>Agente de Qualidade</span>
+        <span class="pending">Não configurado</span>
+      </div>
+    </section>
+
+    <section class="section" id="leads">
+      <h2>Pesquisa de leads</h2>
+      <p class="empty">
+        A integração com fontes reais ainda será configurada.
+        Nenhum resultado será inventado ou exibido como se fosse real.
+      </p>
+    </section>
+
+    <section class="section" id="projetos">
+      <h2>Projetos</h2>
+      <p class="empty">Nenhum projeto cadastrado.</p>
+    </section>
+
+    <section class="section" id="clientes">
+      <h2>Clientes</h2>
+      <p class="empty">Nenhum cliente cadastrado.</p>
+    </section>
+
+    <section class="section" id="relatorios">
+      <h2>Relatórios</h2>
+      <p class="empty">Nenhum relatório disponível.</p>
+    </section>
+
+    <section class="section" id="configuracoes">
+      <h2>Configurações</h2>
+      <p class="empty">
+        As configurações de acesso, segurança e integrações
+        serão implementadas nas próximas etapas.
+      </p>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>
